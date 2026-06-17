@@ -1,100 +1,100 @@
-import { useEffect, useMemo, useState } from 'react';
-import type { Session } from '@supabase/supabase-js';
-import { downloadCsv } from './export';
-import { isSupabaseConfigured, supabase } from './supabase';
-import type {
-  HouseholdMembership,
-  InventoryFormValues,
-  InventoryItem,
-  InventoryItemInsert,
-  InventoryItemUpdate
-} from './types';
-
-const blankForm: InventoryFormValues = {
-  item_name: '',
-  category: '',
-  description: '',
-  quantity: 1,
-  unit: '',
-  location: '',
-  supplier_name: '',
-  supplier_contact: '',
-  supplier_website: '',
-  purchase_date: '',
-  cost: null,
-  notes: ''
+export type InventoryItem = {
+  id: string;
+  household_id: string;
+  item_name: string;
+  category: string | null;
+  description: string | null;
+  quantity: number;
+  unit: string | null;
+  location: string | null;
+  supplier_name: string | null;
+  supplier_contact: string | null;
+  supplier_website: string | null;
+  purchase_date: string | null;
+  cost: number | null;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+  created_by: string | null;
 };
 
-function normalizeUrl(url: string | null) {
-  if (!url) return '';
-  return /^https?:\/\//i.test(url) ? url : `https://${url}`;
-}
+export type Household = {
+  id: string;
+  name: string;
+  created_at: string;
+  created_by: string | null;
+};
 
-function asNumber(value: FormDataEntryValue | null, fallback: number | null) {
-  if (value === null || value === '') return fallback;
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : fallback;
-}
+export type HouseholdMember = {
+  household_id: string;
+  user_id: string;
+  role: 'owner' | 'member';
+  approved: boolean;
+  created_at: string;
+};
 
-function AuthPanel() {
-  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+export type HouseholdMembership = {
+  household_id: string;
+  role: 'owner' | 'member';
+  approved: boolean;
+  households: {
+    id: string;
+    name: string;
+  } | null;
+};
 
-  async function submit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
-    setMessage('');
+export type InventoryFormValues = Omit<
+  InventoryItem,
+  'id' | 'household_id' | 'created_at' | 'updated_at' | 'created_by'
+>;
 
-    const action =
-      mode === 'signin'
-        ? supabase.auth.signInWithPassword({ email, password })
-        : supabase.auth.signUp({ email, password });
-    const { error } = await action;
-    setLoading(false);
-    setMessage(
-      error
-        ? error.message
-        : mode === 'signup'
-          ? 'Account created. Ask the household owner to approve this user in Supabase.'
-          : ''
-    );
-  }
-
-  return (
-    <main className="auth-shell">
-      <section className="auth-panel">
-        <div>
-          <p className="eyebrow">Shared household</p>
-          <h1>Inventory</h1>
-        </div>
-        {!isSupabaseConfigured && (
-          <p className="notice">Add Supabase environment variables before signing in.</p>
-        )}
-        <form onSubmit={submit} className="stack">
-          <label>
-            Email
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              autoComplete="email"
-              required
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
-              minLength={6}
-              required
-            />
-          </label>
-          <button disabled={loading || !isSupabaseConfigured}>
-            {loading ? 'Working...' : mode === 'signin' ? 'Sign in' : 'Create account'}
-          </button>
+export type Database = {
+  public: {
+    Tables: {
+      inventory_items: {
+        Row: InventoryItem;
+        Insert: {
+          id?: string;
+          household_id: string;
+          item_name: string;
+          category?: string | null;
+          description?: string | null;
+          quantity?: number;
+          unit?: string | null;
+          location?: string | null;
+          supplier_name?: string | null;
+          supplier_contact?: string | null;
+          supplier_website?: string | null;
+          purchase_date?: string | null;
+          cost?: number | null;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+          created_by?: string | null;
+        };
+        Update: {
+          id?: string;
+          household_id?: string;
+          item_name?: string;
+          category?: string | null;
+          description?: string | null;
+          quantity?: number;
+          unit?: string | null;
+          location?: string | null;
+          supplier_name?: string | null;
+          supplier_contact?: string | null;
+          supplier_website?: string | null;
+          purchase_date?: string | null;
+          cost?: number | null;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+          created_by?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'inventory_items_household_id_fkey';
+            columns: ['household_id'];
+            isOneToOne: false;
+            referencedRelation: 'households';
+            referencedColumns: ['id'];
