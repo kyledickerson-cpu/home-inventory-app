@@ -297,6 +297,9 @@ export default function App() {
 
     async function loadMemberships() {
       setError('');
+      if (!activeSession) {
+  return;
+}
       const { data, error: membershipError } = await supabase
         .from('household_members')
         .select('household_id, role, approved, households(id, name)')
