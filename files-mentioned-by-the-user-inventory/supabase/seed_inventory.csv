@@ -1,0 +1,31 @@
+item_name,category,description,quantity,unit,location,supplier_name,supplier_contact,supplier_website,purchase_date,cost,notes
+BEVMAX 3 EVAPORATOR BRACKET (BLACK),Vending parts,Part no. FV-1001,1,each,,3D print,,,,6.50,Supplier price: 23.90; Supplier: Crane
+BEVMAX 3 CONDENSOR DRIP TIP (BLACK),Vending parts,Part no. FV-1002,1,each,,3D print,,,,,
+BEVMAX 3 EVAPORATOR DRIP TRAY (BLACK),Vending parts,Part no. FV-1003,1,each,,3D print,,,,,
+X MOTOR COVER WHITE,Vending parts,Part no. FV-1004,1,each,,3D print,,,,9.50,Supplier price: 14.17; Supplier part no: D80182329; Supplier: Crane
+X MOTOR COVER WHITE,Vending parts,Part no. FV-1005,1,each,,3D print,,,,9.50,Supplier price: 13.24; Supplier part no: D80182328; Supplier: Crane
+EVOCA MOTOR CASING (BLACK),Vending parts,Part no. FV-1006,1,each,,3D print,,,,10.00,
+Y PULLEY / MOTOR BRACKET (WHITE),Vending parts,Part no. FV-1007,1,each,,3D print,,,,40.00,Supplier price: 82.76; Supplier part no: CR0005937; Supplier: Crane
+X PULLEY / MOTOR BRACKET (WHITE),Vending parts,Part no. FV-1008,1,each,,3D print,,,,40.00,Supplier price: 83.15; Supplier part no: CR0006104; Supplier: Crane
+KNIGHTS BRIDGE LIGHT,Electrical,Part no. FV-1009,1,each,,Electrical go,,,,12.50,Supplier price: 13.90; Supplier: Yess
+KNIGHTS BRIDGE LINK CABLE,Electrical,Part no. FV-1010,1,each,,Electrical go,,,,4.00,Supplier price: 5.20; Supplier: Yess
+COMPACT AXIAL FAN 120X120X28,Electrical,Part no. FV-1011,1,each,,Aliexpress,,,,13.20,Supplier price: 14.12; Supplier part no: PS1238BT-1; Supplier: Polestar
+UNIVERSAL FIT 10W MOTOR,Electrical,Part no. FV-1012,1,each,,Alibaba,,,,13.20,Supplier price: 14.20; Supplier part no: PS10BM-1; Supplier: Polestar
+TRAY STABILIZER,Vending parts,Part no. FV-1013,1,each,,3D print,,,,1.25,Supplier price: 2.38; Supplier part no: D80190501; Supplier: Crane
+GREY KEYPAD BEVMAX,Vending parts,Part no. FV-1014,1,each,,3D print,,,,8.50,Supplier price: 12.89; Supplier part no: D80182462021; Supplier: Crane
+BEVMAX PORT WASHER,Vending parts,Part no. FV-1015,1,each,,3D print,,,,0.10,Supplier price: 0.80
+BEVMAX X RAIL WASHER,Vending parts,Part no. FV-1016,1,each,,3D print,,,,0.10,Supplier price: 0.80
+DISCHARGE PAD,Vending parts,Part no. FV-1017,1,each,,Foam roll,,,,3.50,Supplier price: 8.75; Supplier: Crane
+EVOCA RELAY,Electrical,Part no. FV-1018,1,each,,Amazon,,,,15.00,Supplier price: 80.00; Supplier: Evoca
+HF102F - RELAY,Electrical,Part no. FV-1019,1,each,,,,,,15.75,
+HF33F - RELAY,Electrical,Part no. FV-1020,1,each,,,,,,15.25,
+2.54MM JST 4 PIN CONNECTOR,Electrical,Part no. FV-1021,1,each,,,,,,3.50,
+2.54MM JST TERMINAL,Electrical,Part no. FV-1022,1,each,,,,,,4.00,
+CARD READER BLANK,Vending parts,Part no. FV-1023,1,each,,,,,,7.00,
+SOLDER IRON CLEANER,Tools and consumables,Part no. FV-1024,1,each,,,,,,8.50,
+SOLDER PASTE,Tools and consumables,Part no. FV-1025,1,each,,,,,,5.25,
+FLUX PASTE,Tools and consumables,Part no. FV-1026,1,each,,,,,,5.25,
+DESOLDER BRAID ROLL,Tools and consumables,Part no. FV-1027,1,each,,,,,,5.30,
+22AWG WIRE BOX OF 5,Electrical,Part no. FV-1028,1,box,,,,,,15.95,
+HEAT TAPE FOR PCB PACK,Tools and consumables,Part no. FV-1029,1,pack,,,,,,9.75,
+ANTI STATIC BRUSH FOR PCB,Tools and consumables,Part no. FV-1030,1,each,,,,,,1.76,
